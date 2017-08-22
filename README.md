@@ -3,6 +3,8 @@ Use Case: allow guest users (users without Alfresco login) to download a documen
 
 Alfresco has a guest download servlet that allows guest users to download a document that has guest permission. The download link is in the format of `http:/<host>:<port>/alfresco/guestDownload/<attach | direct>/workspace/SpacesStore/<nodeId>/<filename>`. It could be a challenge for end users to compose such URL. As a convenience, this module adds the guest download link in "Document Details" page. Users can simply copy & paste and share the link with guest users.
 
+The implementation overrides document-links section in Share document-details component.
+
 Project is created as Share jar/amp module with Alfresco SDK 3.0.1.
 
 ## Build
@@ -35,3 +37,17 @@ The browser will prompt you "What do you want to do" with the document.
 ## References
 
 * http://www.seedim.com.au/content/public-access-documents-share-site
+
+* Repository webscript to get document/node details
+`http://<host>:<port>/alfresco/s/slingshot/doclib2/node/workspace/SpacesStore/<nodeId>`
+
+* Sample role/permission data in document details response
+```
+"roles": [
+  "ALLOWED;GROUP_site_sandbox_SiteConsumer;SiteConsumer;INHERITED",
+  "ALLOWED;GROUP_site_sandbox_SiteContributor;SiteContributor;INHERITED",
+  "ALLOWED;guest;SiteConsumer;DIRECT",
+  "ALLOWED;GROUP_site_sandbox_SiteCollaborator;SiteCollaborator;INHERITED",
+  "ALLOWED;GROUP_site_sandbox_SiteManager;SiteManager;INHERITED"
+],
+```
