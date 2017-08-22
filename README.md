@@ -39,6 +39,7 @@ The browser will prompt you "What do you want to do" with the document.
 * http://www.seedim.com.au/content/public-access-documents-share-site
 
 * Repository webscript to get document/node details
+
 `http://<host>:<port>/alfresco/s/slingshot/doclib2/node/workspace/SpacesStore/<nodeId>`
 
 * Sample role/permission data in document details response
