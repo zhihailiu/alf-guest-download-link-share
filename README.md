@@ -36,13 +36,13 @@ The browser will prompt you "What do you want to do" with the document.
 
 ## References
 
-* http://www.seedim.com.au/content/public-access-documents-share-site
+* [Public Access To Documents In A Share Site](http://www.seedim.com.au/content/public-access-documents-share-site)
 
-* Repository webscript by Share component to get document details
+* Repository webscript used by Share component to get document details
 
 `http://<host>:<port>/alfresco/s/slingshot/doclib2/node/workspace/SpacesStore/<nodeId>`
 
-* Sample role/permission data in document details response
+* Sample role (permission) data in document details response
 ```
 "roles": [
   "ALLOWED;GROUP_site_sandbox_SiteConsumer;SiteConsumer;INHERITED",
