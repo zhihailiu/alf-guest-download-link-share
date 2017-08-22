@@ -1,7 +1,7 @@
 # Alfresco Share Guest Download Link 
 Use Case: allow guest users (users without Alfresco login) to download a document.
 
-Alfresco has a guest download servlet that allows guest users to download a document that has guest permission. The download link is in the format of `http://host:port/alfresco/guestDownload/attach/workspace/SpacesStore/{uuid}/{filename}`. As a convenience, this module calculates and adds the guest download link in "Document Details" page. Users can simply copy & paste and share the link with guest users.
+Alfresco has a guest download servlet that allows guest users to download a document that has guest permission. The download link is in the format of `http:/<host>:<port>/alfresco/guestDownload/<attach | direct>/workspace/SpacesStore/<nodeId>/<filename>`. It could be a challenge for end users to compose such URL. As a convenience, this module adds the guest download link in "Document Details" page. Users can simply copy & paste and share the link with guest users.
 
 Project is created as Share jar/amp module with Alfresco SDK 3.0.1.
 
@@ -9,7 +9,7 @@ Project is created as Share jar/amp module with Alfresco SDK 3.0.1.
 `mvn clean install`
 
 ## Deploy
-Copy jar to tomcat/webapps/share/WEB-INF/lib. Restart tomcat.
+Deploy jar or amp
 
 ## Run
 
