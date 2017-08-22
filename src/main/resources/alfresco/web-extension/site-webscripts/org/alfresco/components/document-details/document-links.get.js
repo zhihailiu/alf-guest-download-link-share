@@ -36,15 +36,22 @@ function getGuestDownloadLink(details) {
 	details.item.node.properties["cm:name"]; 
 }
 
+//Reference: permission parsing in Share document-permissions.get.js, setPermissions()
 function hasGuestPermission(roles) {
 	var guestAllowed = false;
+	var permParts, group, allowed;
+	
 	for (var i = 0; i < roles.length; i++) {
-		var role = roles[i];
-		if (role.indexOf("ALLOWED;guest;") != -1) {
+        parts = roles[i].split(";");
+        allowed = parts[0];
+        group = parts[1];
+		
+		if ("ALLOWED" === allowed && "guest" === group) {
 			guestAllowed = true;
 			break;
 		}
 	}
+	
 	return guestAllowed;
 }
 
